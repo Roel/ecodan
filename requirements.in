@@ -1,0 +1,7 @@
+influxdb
+minimalmodbus
+quart
+quart-auth
+apscheduler
+aiosqlite
+hypercorn
