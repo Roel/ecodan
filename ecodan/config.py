@@ -17,10 +17,19 @@
 import os
 
 
+def read_secret(variable_name):
+    if f'{variable_name}_FILE' in os.environ:
+        with open(os.environ.get(f'{variable_name}_FILE'), 'r') as secret_file:
+            secret = secret_file.read()
+    else:
+        secret = os.environ.get(variable_name, None)
+    return secret
+
+
 class Config:
     QUART_AUTH_MODE = 'bearer'
     QUART_AUTH_BASIC_USERNAME = 'admin'
-    QUART_AUTH_BASIC_PASSWORD = os.environ.get('API_ADMIN_PASS')
+    QUART_AUTH_BASIC_PASSWORD = read_secret('API_ADMIN_PASS')
 
     ECODAN_SERIAL_PORT = os.environ.get('MODBUS_PORT')
     ECODAN_SERIAL_BAUDRATE = int(os.environ.get('MODBUS_BAUD_RATE'))
@@ -29,6 +38,6 @@ class Config:
     INFLUX_HOST = os.environ.get('INFLUX_HOST')
     INFLUX_DATABASE = os.environ.get('INFLUX_DATABASE')
     INFLUX_USERNAME = os.environ.get('INFLUX_USERNAME')
-    INFLUX_PASSWORD = os.environ.get('INFLUX_PASSWORD')
+    INFLUX_PASSWORD = read_secret('INFLUX_PASSWORD')
 
     DATABASE_PATH = os.environ.get('SQLITE_DB_PATH')

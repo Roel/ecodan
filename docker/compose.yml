@@ -1,0 +1,21 @@
+services:
+  ecodan:
+    image: ecodan:latest
+    build:
+      context: ..
+      dockerfile: docker/ecodan/Dockerfile
+    env_file:
+      - ../environment.docker.env
+    secrets:
+      - api_admin_pass
+      - influx_password
+    volumes:
+      - ../data:/app/data
+    ports:
+      - 8004:8080
+
+secrets:
+  api_admin_pass:
+    file: ./secrets/API_ADMIN_PASS
+  influx_password:
+    file: ./secrets/INFLUX_PASSWORD

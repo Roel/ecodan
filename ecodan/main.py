@@ -27,6 +27,7 @@ from services.ecodan import EcodanService
 from services.influx import InfluxService
 
 from blueprints.api import api
+from blueprints.status import status
 
 
 class Services:
@@ -57,6 +58,7 @@ async def startup():
     app.services = Services(app)
 
     app.register_blueprint(api, url_prefix='/api')
+    app.register_blueprint(status, url_prefix='/status')
 
 
 @app.after_serving
