@@ -14,11 +14,11 @@ blinker==1.9.0
     # via
     #   flask
     #   quart
-certifi==2026.4.22
+certifi==2026.5.20
     # via requests
 charset-normalizer==3.4.7
     # via requests
-click==8.3.3
+click==8.4.1
     # via
     #   flask
     #   quart
@@ -38,7 +38,7 @@ hypercorn==0.18.0
     #   quart
 hyperframe==6.1.0
     # via h2
-idna==3.14
+idna==3.18
     # via requests
 influxdb==5.3.2
     # via -r requirements.in
@@ -74,7 +74,7 @@ quart==0.20.0
     #   quart-auth
 quart-auth==0.11.0
     # via -r requirements.in
-requests==2.34.0
+requests==2.34.2
     # via influxdb
 six==1.17.0
     # via
