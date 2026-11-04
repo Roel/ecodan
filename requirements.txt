@@ -14,7 +14,7 @@ blinker==1.9.0
     # via
     #   flask
     #   quart
-certifi==2026.10.19
+certifi==2026.10.23
     # via requests
 charset-normalizer==3.5.2
     # via requests
@@ -58,15 +58,15 @@ markupsafe==3.0.4
     #   werkzeug
 minimalmodbus==2.1.1
     # via -r requirements.in
-msgpack==1.2.3
+msgpack==1.2.4
     # via influxdb
 priority==2.0.0
     # via hypercorn
 pyserial==3.5
     # via minimalmodbus
-python-dateutil==2.9.0.post0
+python-dateutil==4.0.0
     # via influxdb
-pytz==2026.5
+pytz==2026.6
     # via influxdb
 quart==0.23.1
     # via
@@ -77,10 +77,10 @@ quart-auth==0.12.0
 requests==2.34.2
     # via influxdb
 six==1.17.0
-    # via
-    #   influxdb
-    #   python-dateutil
-tzlocal==5.4.4
+    # via influxdb
+tzdata==2026.6
+    # via python-dateutil
+tzlocal==5.4.5
     # via apscheduler
 urllib3==2.8.0
     # via requests
